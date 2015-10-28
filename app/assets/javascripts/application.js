@@ -19,11 +19,13 @@ $(document).ready(function() {
 
 	function get_winners(){
     $.get("/winners",function( data ) {
-        // var winners=[]
+        
+       $("#left_places").append("Only "+(365 - data.length) +" places left");
+       // loaded_winners = data.winners
        for(i=0;i<data.length;i++)
        {
 
-         winners.push(new Customer(data[i]));
+         winners.push(data[i].name);
          // console.log(winners[i]);
        }
        // console.log(folks);
@@ -37,59 +39,39 @@ $(document).ready(function() {
   function show_winners()
   {
      // console.log(winners)
-           $(".winners").children().detach();
-    for(i=0;i<winners.length;i++)
+           // $(".winners").children().detach();
+           max = (current+5 > winners.length)? winners.length: current+5;
+    for(i=current;i<current+5;i++)
        {
           // str="#customer"+winners[i].id
-        $(".winners").append("<div class=\"customer\"> </div>");
-        str=$(".customer").last();
-        $(str).append("<p>Name:"+winners[i].name+"</p>");
-        $(str).append("<p>email:"+winners[i].email+"</p>");
-        $(str).append("<p>Phone:"+winners[i].phone_number+"</p>");
-        $(str).append("<a class=\"more\" href=\"/winners/"+winners[i].id+"/notes\">more</a>" )
-        $(str).append("<p></p>");
-        $(str).append("<a class=\"delete\" href=\"/winners/"+winners[i].id+"\">Delete customer</a>" )
-
-        // $(".main_page").append("<p>Name:"+winners[i].name+"</p>");
-        // $(".main_page").append("<p>Name:"+winners[i].name+"</p>");
-
+        $(".winners").append("<div class=\"winner\"> </div>");
+        str=$(".winner").last();
+        $(str).append("<p>"+winners[i]+"</p>");
        }
        $(".winners").css("margin-left","30px")
+       current += 5;
   }
   function more_reaction()
   {
     $(".more").click(function( event ) {
        event.preventDefault();
        // console.log("more");
-       notes_detach();
-       targ=event.currentTarget;
-       var link=$(targ).attr("href");
-
-       $.get(link,function( data ) {
-          //  var id=data.id;
-          // var $points = $("#" + id + " .points");
-          // var votes = data.votes;
-          // $points.html(votes);
-
-          $(".notes_area").append(data);
-          $(".note").css("margin","15px");
-          $(".notes_area").append("<form method=\"post\" action=\""+link+"\" id='notes_form'><input type=\"submit\" value=\"Post_note\"  ></form>")
-          $(".notes_area").append("<textarea id=\"note_add\" rows=\"4\" cols=\"50\" form=\"notes_form\"></textarea>");
-           $(".notes_area textarea").css("width","100%");
-           notes_reaction();
-          console.log(data);
-      }, "html" );
-
-
-      $(targ).css("color","red");
-      // console.log();
-
-          });
+       if (current < winners.length)
+       {
+	       show_winners();
+	   }
+	   else
+	   {
+	   	 alert("There is no more winners");
+	   }
+       
+     });
 
   }
 
+  current = 0;
   winners=[];
   notes=[];
   get_winners();
 
-}
+});
