@@ -1,2 +1,16 @@
 <h1>Win trip to mars</h1>
-<p>Only places left</p>
+<p>Only <%=@left_places%> places left</p>
+<p> Register to get one-way ticket to Red Planet</p>
+<p>The winners</p>
+<% @winners.each do |winner| %>
+<p> <%= winner.name %> </p>
+<% end -%>
+<div id="without_button">
+<%= will_paginate @winners %>
+</div>
+
+<% if @winners.next_page %>
+<div id="load_more_users">
+    <%= button_to 'More users', {action: "index", new_req: true }, method: :get, remote: true, class: "btn btn-primary btn-large" %> 
+</div>
+<% end %>
