@@ -1,0 +1,7 @@
+############################################
+## Generic System Ignores
+syntax: glob
+
+!.gitignore
+.idea
+node_modules
