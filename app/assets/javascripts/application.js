@@ -88,4 +88,8 @@ $(document).ready(function() {
 
   }
 
+  winners=[];
+  notes=[];
+  get_winners();
+
 }
