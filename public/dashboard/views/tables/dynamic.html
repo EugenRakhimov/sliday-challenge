@@ -52,15 +52,26 @@
                         <span class="glyphicon glyphicon-chevron-down"
                               data-ng-click=" order('-sales') "
                               data-ng-class="{active: row == '-sales'}"></span>
-                    </div></th>                    
+                    </div></th> 
+                    <th>
+                        <div class="th">
+                            Edit
+                        </div>
+                    </th>    
+                    <th>
+                        <div class="th">
+                            Delete
+                        </div>
+                    </th>                    
                 </tr>
             </thead>
             <tbody>
                 <tr data-ng-repeat="user in currentPageUsers">
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.winner}}</td>
-                    <!-- <td>{{store.rating}}</td> -->
+                    <td>{{user.winner}}</td>                    
+                    <td><a ng-click="editUser(user)" class="btn btn-warning btn-large">Edit</a></td>
+                    <td><a ng-click="deleteUser(user)" class="btn btn-danger btn-large">Delete</a></td>
                 </tr>
             </tbody>
         </table>

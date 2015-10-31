@@ -50,6 +50,20 @@
         $scope.filteredUsers = $filter('orderBy')($scope.users, rowName);
         return $scope.onOrderChange();
       };
+      $scope.editUser = function(user_id)
+      {
+
+      };
+      $scope.deleteUser = function(user)
+      {
+        $http.delete("/users/"+user.id)
+      .success(function(response) {
+        var index = $scope.users.indexOf(user);
+        $scope.users.splice(index, 1); 
+        return init();  
+        })
+      .error(function(response){console.log(response);});
+      };
       $scope.numPerPageOpt = [3, 5, 10, 20];
       $scope.numPerPage = $scope.numPerPageOpt[2];
       $scope.currentPage = 1;

@@ -73,19 +73,21 @@ $(document).ready(function() {
   {    
     $("#add_new_customer_form").submit(function(event)
     {
-      event.preventDefault();
-      console.log("start");      
+      event.preventDefault();          
       var link = "/users" 
-      var customer_to_add={user:{name:$("#customer_name").val(),email:$("#customer_email").val()}}
-      console.log(customer_to_add);
+      var customer_to_add={name:$("#customer_name").val(),email:$("#customer_email").val()}
+      
       $.ajax({
 
         url: link,
         type: "post",
         data: customer_to_add,
         success: function(result)
-        {  customer=result.customer;
-           console.log(customer);            
+        {  customer=result;
+           console.log(customer);     
+           $("#customer_name").val('');
+           $("#customer_email").val('');
+           alert('Thanks! Come back to see if you win.') ;     
         },
 
         error: function(result)
