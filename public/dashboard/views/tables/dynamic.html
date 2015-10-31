@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
-                        Showing {{filteredStores.length}}/{{stores.length}} entries
+                        Showing {{filteredUsers.length}}/{{users.length}} entries
                     </span>              
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <thead>
                 <tr>
                     <th><div class="th">
-                        Store Name
+                        User Name
                         <span class="glyphicon glyphicon-chevron-up"
                               data-ng-click=" order('name') "
                               data-ng-class="{active: row == 'name'}"></span>
@@ -36,7 +36,7 @@
                               data-ng-class="{active: row == '-name'}"></span>
                     </div></th>
                     <th><div class="th">
-                        Price
+                        Email
                         <span class="glyphicon glyphicon-chevron-up"
                               data-ng-click=" order('price') "
                               data-ng-class="{active: row == 'price'}"></span>
@@ -45,31 +45,22 @@
                               data-ng-class="{active: row == '-price'}"></span>
                     </div></th>
                     <th><div class="th">
-                        Sales (in 30 days)
+                        Winner
                         <span class="glyphicon glyphicon-chevron-up"
                               data-ng-click=" order('sales') "
                               data-ng-class="{active: row == 'sales'}"></span>
                         <span class="glyphicon glyphicon-chevron-down"
                               data-ng-click=" order('-sales') "
                               data-ng-class="{active: row == '-sales'}"></span>
-                    </div></th>
-                    <th><div class="th">
-                        Rating
-                        <span class="glyphicon glyphicon-chevron-up"
-                              data-ng-click=" order('rating') "
-                              data-ng-class="{active: row == 'rating'}"></span>
-                        <span class="glyphicon glyphicon-chevron-down"
-                              data-ng-click=" order('-rating') "
-                              data-ng-class="{active: row == '-rating'}"></span>
-                    </div></th>
+                    </div></th>                    
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="store in currentPageStores">
-                    <td>{{store.name}}</td>
-                    <td>{{store.price}}</td>
-                    <td>{{store.sales}}</td>
-                    <td>{{store.rating}}</td>
+                <tr data-ng-repeat="user in currentPageUsers">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.winner}}</td>
+                    <!-- <td>{{store.rating}}</td> -->
                 </tr>
             </tbody>
         </table>
@@ -89,7 +80,7 @@
                 <div class="col-md-6 text-right pagination-container">
                     <pagination class="pagination-sm"
                                 ng-model="currentPage"
-                                total-items="filteredStores.length"
+                                total-items="filteredUsers.length"
                                 max-size="4"
                                 ng-change="select(currentPage)"
                                 items-per-page="numPerPage"
