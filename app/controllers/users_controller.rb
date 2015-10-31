@@ -3,4 +3,5 @@ class UsersController < ApplicationController
 		user = User.all
 		render json: user
 	end
+	
 end

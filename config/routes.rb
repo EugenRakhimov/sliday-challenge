@@ -3,6 +3,7 @@ SlidayChallenge::Application.routes.draw do
   resources :users 
   resources :winners, only: [:index]
   resources :dashboard, only: [:index]
+  resources :session, only: [:create, :show]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

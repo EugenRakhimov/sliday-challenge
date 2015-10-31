@@ -6,11 +6,11 @@
       var init;
 
       $http.get("/users")
-    .success(function(response) {
-      $scope.users = response;
-      console.log($scope.users); 
-      return init();})
-    .error(function(response){console.log(response);});
+      .success(function(response) {
+        $scope.users = response;
+        console.log($scope.users); 
+        return init();})
+      .error(function(response){console.log(response);});
       
       $scope.searchKeywords = '';
       $scope.filteredUsers = [];

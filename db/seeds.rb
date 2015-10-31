@@ -10,3 +10,4 @@
 	User.create(name:Faker::Name.name,email:Faker::Internet.email, winner:true)
 	
 end
+Admin.create(email:'admin@sl.com', password:'qwerty')
