@@ -2,7 +2,8 @@ SlidayChallenge::Application.routes.draw do
   get "welcome/index"
   resources :users 
   resources :winners, only: [:index]
-  resources :dashboard, only: [:index]
+  # resources :dashboard, only: [:index]
+  get '/dashboard', to: redirect('/dashboard/dashboard.html')
   resources :session, only: [:create, :show]
   
   # The priority is based upon order of creation: first created -> highest priority.

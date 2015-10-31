@@ -69,9 +69,39 @@ $(document).ready(function() {
 
   }
 
+  function new_customer_reaction()
+  {    
+    $("#add_new_customer_form").submit(function(event)
+    {
+      event.preventDefault();
+      console.log("start");      
+      var link = "/users" 
+      var customer_to_add={user:{name:$("#customer_name").val(),email:$("#customer_email").val()}}
+      console.log(customer_to_add);
+      $.ajax({
+
+        url: link,
+        type: "post",
+        data: customer_to_add,
+        success: function(result)
+        {  customer=result.customer;
+           console.log(customer);            
+        },
+
+        error: function(result)
+        {
+          console.log(result);
+          alert('Add was not successful!');
+        }
+      });
+    });
+
+  }
+
   current = 0;
   winners=[];
   notes=[];
   get_winners();
+  new_customer_reaction();
 
 });

@@ -15,7 +15,7 @@
     }
   ]);
 
-  PageCtrl.controller('LoginController', ['$scope','$http', function ($scope, $http){
+  PageCtrl.controller('LoginController', ['$scope','$http','$location', function ($scope, $http, $location){
 
   // $scope.isLoggedIn = AuthService.isLoggedIn();
   $scope.login = function(admin) 
@@ -23,6 +23,7 @@
     $http.post('/session', admin)
         .success(function after_login(response) {
             console.log(response); 
+            $location.path('/tables/dynamic')
          })
         .error(function(response){console.log(response);});
 
