@@ -10,13 +10,14 @@
         <div class="container">
             <div class="form-container">
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" ng-controller="LoginController">
                     <fieldset>
                         <div class="form-group">
                             <span class="glyphicon glyphicon-envelope"></span>
                             <input type="email"
                                    class="form-control input-lg input-round text-center"
                                    placeholder="Username"
+                                   ng-model="admin.email"
                                    >
                         </div>
                         <div class="form-group">
@@ -24,10 +25,11 @@
                             <input type="password"
                                    class="form-control input-lg input-round text-center"
                                    placeholder="Password"
+                                   ng-model="admin.password"
                                    >
                         </div>
                         <div class="form-group">
-                            <a href="#/" class="btn btn-primary btn-lg btn-round btn-block text-center">Log in</a>
+                            <a href="#/" class="btn btn-primary btn-lg btn-round btn-block text-center" ng-click="login(admin)">Log in</a>
                         </div>
                     </fieldset>
                 </form>

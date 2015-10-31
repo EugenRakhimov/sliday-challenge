@@ -15,4 +15,20 @@
     }
   ]);
 
+  app.page.ctrls.controller('LoginController', ['$scope','$http', function ($scope, $http){
+
+  $scope.isLoggedIn = AuthService.isLoggedIn();
+  $scope.login = function(user) {
+   AuthService.login(user.email, user.password, function(){ $scope.isLoggedIn = true;});
+   $scope.isLoggedIn = AuthService.isLoggedIn();
+  };
+  $scope.logout = function()
+  { 
+    AuthService.logout();
+    $scope.isLoggedIn = AuthService.isLoggedIn();
+  };
+  $scope.isLoggedIn = AuthService.isLoggedIn();
+  
+}]);
+
 }).call(this);

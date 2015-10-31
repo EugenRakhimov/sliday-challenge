@@ -41,7 +41,9 @@ angular.module('app', [
         routes = [
             'dashboard',
             'tables/static', 'tables/dynamic', 'tables/responsive'
-            'forms/elements', 'forms/layouts', 'forms/validation', 'forms/wizard'
+            'forms/elements', 'forms/layouts', 'forms/validation', 'forms/wizard',
+            'pages/signin'
+
             
         ]
 
