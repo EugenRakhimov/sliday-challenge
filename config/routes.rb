@@ -4,7 +4,7 @@ SlidayChallenge::Application.routes.draw do
   resources :winners, only: [:index]
   # resources :dashboard, only: [:index]
   get '/dashboard', to: redirect('/dashboard/dashboard.html')
-  resources :session, only: [:create, :show]
+  resources :session, only: [:create, :show, :destroy]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

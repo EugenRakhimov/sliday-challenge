@@ -98,7 +98,7 @@
         });
         
       };
-      
+            
       $scope.numPerPageOpt = [3, 5, 10, 20];
       $scope.numPerPage = $scope.numPerPageOpt[2];
       $scope.currentPage = 1;

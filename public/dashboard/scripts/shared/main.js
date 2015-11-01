@@ -75,8 +75,18 @@
       };
     }
   ]).controller('NavContainerCtrl', ['$scope', function($scope) {}]).controller('NavCtrl', [
-    '$scope', 'taskStorage', 'filterFilter', function($scope, taskStorage, filterFilter) {
+    '$scope', 'taskStorage', 'filterFilter','$location','$http', function($scope, taskStorage, filterFilter,$location,$http) {
       var tasks;
+      $scope.logout = function ()
+      {
+        console.log("logout started");
+        $http.delete('/session/1')
+        .success(function after_login(response) {
+            console.log(response); 
+            $location.path('/pages/signin')
+         })
+        .error(function(response){console.log(response);});
+      };
       tasks = $scope.tasks = taskStorage.get();
       $scope.taskRemainingCount = filterFilter(tasks, {
         completed: false

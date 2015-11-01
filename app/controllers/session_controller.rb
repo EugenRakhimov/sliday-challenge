@@ -19,4 +19,10 @@ class SessionController < ApplicationController
 		
 		render text:"success"
 	end
+	def destroy
+	    if session[:user_id]
+	      session[:user_id] = nil
+	      render json: {message:"you logged out"}
+	    end
+	end
 end
