@@ -1,35 +1,40 @@
 <div id="top_header">
-  <p id="mars">Win trip to mars</p>
-  <p id="left_places"></p>
-  <p id="register"> Register to get one-way ticket to Red Planet</p>
-   <div class="signin-body">
-      <div class="container">
-          
-
-              <form class="form-horizontal" id="add_new_customer_form">
-                  <fieldset>
-                  	<div class="form-group">
-                          <span class="glyphicon glyphicon-lock"></span>
-                          <input type="text"
-                                 class="form-control input-lg input-round text-center form_name"
-                                 placeholder="Full name" id="customer_name"
-                                 >
-                      </div>
-                      <div class="form-group">
-                          <span class="glyphicon glyphicon-envelope"></span>
-                          <input type="email"
-                                 class="form-control input-lg input-round text-center form_name"
-                                 placeholder="Email" id ="customer_email"
-                                 >
-                      </div>
-                      
-                      <div class="form-group">
-                          <input type="submit" class="btn btn-primary btn-lg btn-round btn-block text-center" id="submit_button" >
-                      </div>
-                  </fieldset>
-              </form>
-          
+  <div class="row">
+    <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <p id="mars">WIN TRIP TO MARS</p>
+        <p id="left_places"></p>        
       </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><p id="register"> Register to get one-way ticket to Red Planet</p></div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+     <div class="signin-body col-md-4">
+        <form class="form-horizontal" id="add_new_customer_form">          
+            	<div class="form-group">                    
+                    <input type="text"
+                           class="form-control input-lg input-round text-center form_name"
+                           placeholder="Full name" id="customer_name"
+                           >
+                </div>
+                <div class="form-group">                    
+                    <input type="email"
+                           class="form-control input-lg input-round text-center form_name"
+                           placeholder="Email" id ="customer_email"
+                           >
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-lg btn-round btn-block text-center" id="submit_button" >
+                </div>          
+        </form>
+    </div>
+    <div class="col-md-4"></div>
   </div>
 </div>
 <div class="winners" ><p id="winners_cap">The winners</p></div>

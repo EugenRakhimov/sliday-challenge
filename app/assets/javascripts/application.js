@@ -20,7 +20,7 @@ $(document).ready(function() {
 	function get_winners(){
     $.get("/winners",function( data ) {
         
-       $("#left_places").append("Only "+(365 - data.length) +" places left");
+       $("#left_places").append("Only "+(365 - data.length) +" places left!");
        // loaded_winners = data.winners
        for(i=0;i<data.length;i++)
        {
