@@ -50,8 +50,31 @@
         $scope.filteredUsers = $filter('orderBy')($scope.users, rowName);
         return $scope.onOrderChange();
       };
-      $scope.editUser = function(user_id)
+      $scope.editUser = function(user)
       {
+        console.log(user);
+        var modalInstance = $modal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: '/dashboard/views/tables/edit_user_modal.html',
+          controller: 'EditInstanceCtrl',
+          resolve: {
+            user: function () {
+              return user;
+            } 
+          }
+          });
+        modalInstance.result.then(function (changed_user) {
+          $http.put("/users/"+user.id, changed_user)
+          .success(function(response) {
+            console.log("success");
+            })
+          .error(function(response){
+            console.log(response); 
+            alert("User change failed");
+          });
+        }, function () {
+          console.log("change canceled");
+        });
 
       };
       $scope.deleteUser = function(user)
@@ -94,6 +117,19 @@
     
     $scope.ok = function () {
       $modalInstance.close('delete');
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+  });
+
+ tablesModule.controller('EditInstanceCtrl', function ($scope, $modalInstance, user) {
+
+    console.log(user);
+    $scope.user = user;
+    $scope.ok = function () {
+      $modalInstance.close($scope.user);
     };
 
     $scope.cancel = function () {

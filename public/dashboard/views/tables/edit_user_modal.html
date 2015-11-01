@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h3 class="modal-title">Edit user</h3>
+</div>
+    <input type="text" class="form-control input-round" placeholder="name" ng-model="user.name">
+    <input type="text" class="form-control input-round" placeholder="email" ng-model="user.email">
+    <label class="switch switch-success"><input type="checkbox" ng-model="user.winner" class="ng-valid ng-dirty"><i></i></label>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="ok()">Change</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+
+<input type="text" class="form-control input-round">
