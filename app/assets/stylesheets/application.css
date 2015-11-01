@@ -11,3 +11,33 @@
  *= require_self
  *= require_tree .
  */
+#mars {
+	font-family: 'Roboto Slab';
+		font-weight: normal;
+        font-size: 64px;
+        color: #FFFFFF;
+        text-decoration: underline;
+}
+#left_places {
+	font-family: 'Roboto Slab';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #FFFFFF;
+
+}
+#register {
+	font-family: 'Roboto Slab';
+		font-weight: normal;
+        font-size: 32px;
+        color: #CCCCCC;       
+}
+.form_name {
+	font-family: 'Roboto Slab';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #FFFFFF;
+
+}
+body {
+	background-color: black;
+}
