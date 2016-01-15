@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ /**/
+ body { 
+ 	margin: 0;
+ 	text-align: center; }
+ #top_header
+ {
+ 	background: rgba(248,80,50,1);
+ 	background: url(desert.jpg);
+ 	background-position: 0,0;
+ 	background-size: cover;
+ 	width: 100%;
+ 	/**/
+background: url(desert.jpg), -moz-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(52,42,42,0.8) 100%);
+background: url(desert.jpg),-webkit-gradient(left top, right top, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(241,111,92,1)), color-stop(100%, rgba(52,42,42,0.8)));
+background: url(desert.jpg), -webkit-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(52,42,42,0.8) 100%);
+background:url(desert.jpg), -o-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(52,42,42,0.8) 100%);
+background: url(desert.jpg),-ms-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(52,42,42,0.8) 100%);
+background:url(desert.jpg), linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(52,42,42,0.8) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#342a2a', GradientType=1 );
+ padding-top: 13%;
+ }
+
+#mars {
+	font-family: 'Roboto Slab';
+		font-weight: normal;
+        font-size: 64px;
+        color: #FFFFFF;
+        /*text-decoration: underline;*/
+        border-bottom: 1px solid #FFFFFF;
+        margin: 0;
+}
+#left_places {
+	font-family: 'Roboto Slab';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #FFFFFF;
+        margin: 0;
+
+}
+#register {
+	font-family: 'Roboto Slab';
+		font-weight: normal;
+        font-size: 32px;
+        color: #CCCCCC;   
+        margin-top: 10%;    
+}
+.form_name {
+	font-family: 'Roboto';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #999999;
+}
+#submit_button {
+	font-family: 'Roboto';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #FFFFFF;
+}
+.winners {
+	font-family: 'Roboto';
+		font-weight: lighter;
+        font-size: 24px;
+        color: #666666;
+}
+
+#winners_cap{
+	font-family: 'Roboto Slab';
+		font-weight: normal;
+        font-size: 36px;
+        color: #5F564F;
+        
+}
+
+#load_more{
+	font-family: 'Roboto';
+		font-weight: lighter;
+        font-size: 18px;
+        color: #666666;
+}
+.form-group
+{
+	width: 70%
+}
